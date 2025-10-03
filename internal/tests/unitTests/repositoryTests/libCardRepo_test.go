@@ -1,18 +1,20 @@
 package repositoryTests
 
 import (
+	"app/internal/repo/impl"
+	"app/internal/service/core/models"
+	"app/internal/service/errs"
 	"context"
 	"database/sql"
 	"errors"
-	"github.com/google/uuid"
-	"github.com/nikitalystsev/BookSmart-repo-postgres/impl"
-	"github.com/nikitalystsev/BookSmart-services/core/models"
-	"github.com/nikitalystsev/BookSmart-services/errs"
-	"github.com/nikitalystsev/BookSmart/pkg/logging"
-	"github.com/stretchr/testify/assert"
-	sqlxmock "github.com/zhashkevych/go-sqlxmock"
 	"testing"
 	"time"
+
+	"app/pkg/logging"
+
+	"github.com/google/uuid"
+	"github.com/stretchr/testify/assert"
+	sqlxmock "github.com/zhashkevych/go-sqlxmock"
 )
 
 func TestLibCardRepo_Create(t *testing.T) {

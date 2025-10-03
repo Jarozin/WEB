@@ -1,19 +1,21 @@
 package serviceTests
 
 import (
+	"app/internal/service/core/dto"
 	"context"
 	"errors"
 	"fmt"
+	"testing"
+
+	"app/internal/service/core/models"
+	"app/internal/service/errs"
+	"app/internal/service/impl"
+	mockrepo "app/internal/tests/unitTests/serviceTests/mocks"
+	"app/pkg/logging"
+
 	"github.com/golang/mock/gomock"
 	"github.com/google/uuid"
-	"github.com/nikitalystsev/BookSmart-services/core/dto"
-	"github.com/nikitalystsev/BookSmart-services/core/models"
-	"github.com/nikitalystsev/BookSmart-services/errs"
-	"github.com/nikitalystsev/BookSmart-services/impl"
-	mockrepo "github.com/nikitalystsev/BookSmart/internal/tests/unitTests/serviceTests/mocks"
-	"github.com/nikitalystsev/BookSmart/pkg/logging"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestBookService_Create(t *testing.T) {

@@ -8,9 +8,10 @@ import (
 	context "context"
 	reflect "reflect"
 
+	models "app/internal/service/core/models"
+
 	gomock "github.com/golang/mock/gomock"
 	uuid "github.com/google/uuid"
-	models "github.com/nikitalystsev/BookSmart-services/core/models"
 )
 
 // MockILibCardRepo is a mock of ILibCardRepo interface.

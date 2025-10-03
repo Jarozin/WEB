@@ -1,21 +1,23 @@
 package repositoryTests
 
 import (
+	"app/internal/repo/impl"
+	"app/internal/service/core/models"
+	"app/internal/service/errs"
 	"context"
 	"database/sql"
 	"errors"
 	"fmt"
+	"testing"
+	"time"
+
+	"app/pkg/logging"
+
 	"github.com/alicebob/miniredis/v2"
 	"github.com/google/uuid"
-	"github.com/nikitalystsev/BookSmart-repo-postgres/impl"
-	"github.com/nikitalystsev/BookSmart-services/core/models"
-	"github.com/nikitalystsev/BookSmart-services/errs"
-	"github.com/nikitalystsev/BookSmart/pkg/logging"
 	"github.com/redis/go-redis/v9"
 	"github.com/stretchr/testify/assert"
 	sqlmock "github.com/zhashkevych/go-sqlxmock"
-	"testing"
-	"time"
 )
 
 func TestReaderRepo_Create(t *testing.T) {

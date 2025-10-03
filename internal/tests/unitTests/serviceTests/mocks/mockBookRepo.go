@@ -8,10 +8,11 @@ import (
 	context "context"
 	reflect "reflect"
 
+	dto "app/internal/service/core/dto"
+	models "app/internal/service/core/models"
+
 	gomock "github.com/golang/mock/gomock"
 	uuid "github.com/google/uuid"
-	dto "github.com/nikitalystsev/BookSmart-services/core/dto"
-	models "github.com/nikitalystsev/BookSmart-services/core/models"
 )
 
 // MockIBookRepo is a mock of IBookRepo interface.

@@ -1,17 +1,19 @@
 package repositoryTests
 
 import (
+	"app/internal/repo/impl"
+	"app/internal/service/core/models"
 	"context"
 	"errors"
 	"fmt"
-	"github.com/google/uuid"
-	"github.com/nikitalystsev/BookSmart-repo-postgres/impl"
-	"github.com/nikitalystsev/BookSmart-services/core/models"
-	"github.com/nikitalystsev/BookSmart/pkg/logging"
-	"github.com/stretchr/testify/assert"
-	sqlmock "github.com/zhashkevych/go-sqlxmock"
 	"testing"
 	"time"
+
+	"app/pkg/logging"
+
+	"github.com/google/uuid"
+	"github.com/stretchr/testify/assert"
+	sqlmock "github.com/zhashkevych/go-sqlxmock"
 )
 
 func TestReservationRepo_Create(t *testing.T) {

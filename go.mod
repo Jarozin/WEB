@@ -152,11 +152,3 @@ require (
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-replace (
-	github.com/nikitalystsev/BookSmart-repo-mongo => ./components/component-repo-mongo
-	github.com/nikitalystsev/BookSmart-repo-postgres => ./components/component-repo-postgres
-	github.com/nikitalystsev/BookSmart-services => ./components/component-services
-	github.com/nikitalystsev/BookSmart-tech-ui => ./components/component-tech-ui
-	github.com/nikitalystsev/BookSmart-web-api => ./components/component-web-api
-)
