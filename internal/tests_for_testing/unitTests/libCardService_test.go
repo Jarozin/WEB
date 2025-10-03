@@ -1,24 +1,27 @@
 package unitTests
 
 import (
+	"app/internal/service/core/models"
+	"app/internal/service/errs"
+	"app/internal/service/impl"
+	"app/internal/service/intf"
 	"context"
 	"errors"
+	"testing"
+
+	implRepo "app/internal/repo/impl"
+	mockrepo "app/internal/tests/unitTests/serviceTests/mocks"
+	ommodels "app/internal/tests_for_testing/unitTests/objectMother/models"
+	tdbmodels "app/internal/tests_for_testing/unitTests/testDataBuilder/models"
+
+	"app/pkg/logging"
+
 	"github.com/golang/mock/gomock"
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx"
-	implRepo "github.com/nikitalystsev/BookSmart-repo-postgres/impl"
-	"github.com/nikitalystsev/BookSmart-services/core/models"
-	"github.com/nikitalystsev/BookSmart-services/errs"
-	"github.com/nikitalystsev/BookSmart-services/impl"
-	"github.com/nikitalystsev/BookSmart-services/intf"
-	mockrepo "github.com/nikitalystsev/BookSmart/internal/tests/unitTests/serviceTests/mocks"
-	ommodels "github.com/nikitalystsev/BookSmart/internal/tests_for_testing/unitTests/objectMother/models"
-	tdbmodels "github.com/nikitalystsev/BookSmart/internal/tests_for_testing/unitTests/testDataBuilder/models"
-	"github.com/nikitalystsev/BookSmart/pkg/logging"
 	"github.com/ozontech/allure-go/pkg/framework/provider"
 	"github.com/ozontech/allure-go/pkg/framework/suite"
 	"github.com/testcontainers/testcontainers-go/modules/postgres"
-	"testing"
 )
 
 type LibCardServiceTestsSuite struct {

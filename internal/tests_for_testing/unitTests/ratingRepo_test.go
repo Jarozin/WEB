@@ -1,19 +1,22 @@
 package unitTests
 
 import (
+	"app/internal/service/core/models"
+	"app/internal/service/impl"
+	"app/internal/service/intfRepo"
 	"context"
 	"errors"
+	"testing"
+
+	implRepo "app/internal/repo/impl"
+	ommodels "app/internal/tests_for_testing/unitTests/objectMother/models"
+
+	"app/pkg/logging"
+
 	"github.com/jmoiron/sqlx"
-	implRepo "github.com/nikitalystsev/BookSmart-repo-postgres/impl"
-	"github.com/nikitalystsev/BookSmart-services/core/models"
-	"github.com/nikitalystsev/BookSmart-services/impl"
-	"github.com/nikitalystsev/BookSmart-services/intfRepo"
-	ommodels "github.com/nikitalystsev/BookSmart/internal/tests_for_testing/unitTests/objectMother/models"
-	"github.com/nikitalystsev/BookSmart/pkg/logging"
 	"github.com/ozontech/allure-go/pkg/framework/provider"
 	"github.com/ozontech/allure-go/pkg/framework/suite"
 	sqlxmock "github.com/zhashkevych/go-sqlxmock"
-	"testing"
 )
 
 type RatingRepoTestsSuite struct {

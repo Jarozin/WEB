@@ -1,10 +1,11 @@
 package models
 
 import (
-	"github.com/google/uuid"
-	"github.com/nikitalystsev/BookSmart-services/core/models"
-	"github.com/nikitalystsev/BookSmart-services/impl"
+	"app/internal/service/core/models"
+	"app/internal/service/impl"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 type ReservationModelBuilder struct {

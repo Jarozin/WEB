@@ -1,8 +1,9 @@
 package models
 
 import (
+	"app/internal/service/core/models"
+
 	"github.com/google/uuid"
-	"github.com/nikitalystsev/BookSmart-services/core/models"
 )
 
 type BookModelBuilder struct {

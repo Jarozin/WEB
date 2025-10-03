@@ -1,29 +1,32 @@
 package unitTests
 
 import (
+	"app/internal/service/core/dto"
+	"app/internal/service/core/models"
+	"app/internal/service/errs"
+	"app/internal/service/impl"
+	"app/internal/service/intf"
+	"app/internal/service/pkg/auth"
+	"app/internal/service/pkg/hash"
 	"context"
 	"errors"
+	"log"
+	"testing"
+
+	implRepo "app/internal/repo/impl"
+	mockrepo "app/internal/tests/unitTests/serviceTests/mocks"
+	omdto "app/internal/tests_for_testing/unitTests/objectMother/dto"
+	ommodels "app/internal/tests_for_testing/unitTests/objectMother/models"
+
+	"app/pkg/logging"
+
 	"github.com/golang/mock/gomock"
 	"github.com/jmoiron/sqlx"
-	implRepo "github.com/nikitalystsev/BookSmart-repo-postgres/impl"
-	"github.com/nikitalystsev/BookSmart-services/core/dto"
-	"github.com/nikitalystsev/BookSmart-services/core/models"
-	"github.com/nikitalystsev/BookSmart-services/errs"
-	"github.com/nikitalystsev/BookSmart-services/impl"
-	"github.com/nikitalystsev/BookSmart-services/intf"
-	"github.com/nikitalystsev/BookSmart-services/pkg/auth"
-	"github.com/nikitalystsev/BookSmart-services/pkg/hash"
-	mockrepo "github.com/nikitalystsev/BookSmart/internal/tests/unitTests/serviceTests/mocks"
-	omdto "github.com/nikitalystsev/BookSmart/internal/tests_for_testing/unitTests/objectMother/dto"
-	ommodels "github.com/nikitalystsev/BookSmart/internal/tests_for_testing/unitTests/objectMother/models"
-	"github.com/nikitalystsev/BookSmart/pkg/logging"
 	"github.com/ozontech/allure-go/pkg/framework/provider"
 	"github.com/ozontech/allure-go/pkg/framework/suite"
 	"github.com/redis/go-redis/v9"
 	"github.com/testcontainers/testcontainers-go/modules/postgres"
 	testredis "github.com/testcontainers/testcontainers-go/modules/redis"
-	"log"
-	"testing"
 )
 
 type ReaderServiceTestsSuite struct {

@@ -1,23 +1,26 @@
 package unitTests
 
 import (
+	"app/internal/service/core/models"
+	"app/internal/service/errs"
+	"app/internal/service/intfRepo"
 	"context"
 	"database/sql"
 	"errors"
+	"testing"
+	"time"
+
+	implRepo "app/internal/repo/impl"
+	ommodels "app/internal/tests_for_testing/unitTests/objectMother/models"
+
+	"app/pkg/logging"
+
 	"github.com/go-redis/redismock/v9"
 	"github.com/jmoiron/sqlx"
-	implRepo "github.com/nikitalystsev/BookSmart-repo-postgres/impl"
-	"github.com/nikitalystsev/BookSmart-services/core/models"
-	"github.com/nikitalystsev/BookSmart-services/errs"
-	"github.com/nikitalystsev/BookSmart-services/intfRepo"
-	ommodels "github.com/nikitalystsev/BookSmart/internal/tests_for_testing/unitTests/objectMother/models"
-	"github.com/nikitalystsev/BookSmart/pkg/logging"
 	"github.com/ozontech/allure-go/pkg/framework/provider"
 	"github.com/ozontech/allure-go/pkg/framework/suite"
 	"github.com/redis/go-redis/v9"
 	sqlxmock "github.com/zhashkevych/go-sqlxmock"
-	"testing"
-	"time"
 )
 
 type ReaderRepoTestsSuite struct {

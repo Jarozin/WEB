@@ -1,9 +1,10 @@
 package models
 
 import (
-	"github.com/nikitalystsev/BookSmart-services/core/models"
-	tdbmodels "github.com/nikitalystsev/BookSmart/internal/tests_for_testing/unitTests/testDataBuilder/models"
+	"app/internal/service/core/models"
 	"time"
+
+	tdbmodels "app/internal/tests_for_testing/unitTests/testDataBuilder/models"
 )
 
 type ReservationModelObjectMother struct {

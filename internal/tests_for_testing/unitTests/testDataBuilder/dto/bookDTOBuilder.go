@@ -1,6 +1,6 @@
 package dto
 
-import "github.com/nikitalystsev/BookSmart-services/core/dto"
+import "app/internal/service/core/dto"
 
 type BookParamsDTOBuilder struct {
 	Title          string

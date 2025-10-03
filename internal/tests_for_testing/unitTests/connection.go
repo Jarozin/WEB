@@ -4,6 +4,13 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"io"
+	"log"
+	"net/url"
+	"os"
+	"path/filepath"
+	"time"
+
 	"github.com/docker/docker/api/types/container"
 	"github.com/golang-migrate/migrate/v4"
 	migrations "github.com/golang-migrate/migrate/v4/database/postgres"
@@ -15,12 +22,6 @@ import (
 	testpostgres "github.com/testcontainers/testcontainers-go/modules/postgres"
 	testredis "github.com/testcontainers/testcontainers-go/modules/redis"
 	"github.com/testcontainers/testcontainers-go/wait"
-	"io"
-	"log"
-	"net/url"
-	"os"
-	"path/filepath"
-	"time"
 )
 
 func GetRedisForClassicUnitTests() (*testredis.RedisContainer, error) {

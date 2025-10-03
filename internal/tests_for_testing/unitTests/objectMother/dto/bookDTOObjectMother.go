@@ -1,8 +1,9 @@
 package dto
 
 import (
-	"github.com/nikitalystsev/BookSmart-services/core/dto"
-	tdbdto "github.com/nikitalystsev/BookSmart/internal/tests_for_testing/unitTests/testDataBuilder/dto"
+	"app/internal/service/core/dto"
+
+	tdbdto "app/internal/tests_for_testing/unitTests/testDataBuilder/dto"
 )
 
 type BookParamsDTOObjectMother struct {
