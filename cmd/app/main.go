@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/joho/godotenv"
-	"github.com/nikitalystsev/BookSmart/internal/app"
+	"app/internal/app"
 	"log"
+
+	"github.com/joho/godotenv"
 )
 
 const configsDir = "configs"

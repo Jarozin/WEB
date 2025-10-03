@@ -1,23 +1,21 @@
 package app
 
 import (
+	"app/internal/config"
+	"app/internal/handler/handlers"
+	repoPostgres "app/internal/repo"
+	implPostgres "app/internal/repo/impl"
+	"app/internal/service/impl"
+	"app/internal/service/intfRepo"
+	"app/internal/service/pkg/auth"
+	"app/internal/service/pkg/hash"
+	"app/internal/service/pkg/transact"
+	"app/pkg/logging"
 	"fmt"
-	trmmongo "github.com/avito-tech/go-transaction-manager/drivers/mongo/v2"
+
 	trmsqlx "github.com/avito-tech/go-transaction-manager/drivers/sqlx/v2"
 	"github.com/avito-tech/go-transaction-manager/trm/v2/manager"
 	_ "github.com/lib/pq"
-	repoMongo "github.com/nikitalystsev/BookSmart-repo-mongo"
-	implMongo "github.com/nikitalystsev/BookSmart-repo-mongo/impl"
-	repoPostgres "github.com/nikitalystsev/BookSmart-repo-postgres"
-	implPostgres "github.com/nikitalystsev/BookSmart-repo-postgres/impl"
-	"github.com/nikitalystsev/BookSmart-services/impl"
-	"github.com/nikitalystsev/BookSmart-services/intfRepo"
-	"github.com/nikitalystsev/BookSmart-services/pkg/auth"
-	"github.com/nikitalystsev/BookSmart-services/pkg/hash"
-	"github.com/nikitalystsev/BookSmart-services/pkg/transact"
-	"github.com/nikitalystsev/BookSmart-web-api/handlers"
-	"github.com/nikitalystsev/BookSmart/internal/config"
-	"github.com/nikitalystsev/BookSmart/pkg/logging"
 	"github.com/redis/go-redis/v9"
 )
 
@@ -78,24 +76,25 @@ func Run(configDir string) {
 			return
 		}
 	default:
-		mongoClient, err := repoMongo.NewClient(cfg.Mongo.URI, cfg.Mongo.Username, cfg.Mongo.Password, cfg.Mongo.DBName)
-		if err != nil {
-			logger.Errorf("error connect to mongo: %v", err)
-			return
-		}
-		db := mongoClient.Database(cfg.Mongo.DBName)
+		// mongoClient, err := repoMongo.NewClient(cfg.Mongo.URI, cfg.Mongo.Username, cfg.Mongo.Password, cfg.Mongo.DBName)
+		// if err != nil {
+		// 	logger.Errorf("error connect to mongo: %v", err)
+		// 	return
+		// }
+		// db := mongoClient.Database(cfg.Mongo.DBName)
 
-		bookRepo = implMongo.NewBookRepo(db, logger)
-		libCardRepo = implMongo.NewLibCardRepo(db, logger)
-		readerRepo = implMongo.NewReaderRepo(db, client, logger)
-		reservationRepo = implMongo.NewReservationRepo(db, logger)
-		ratingRepo = implMongo.NewRatingRepo(db, logger)
+		// bookRepo = implMongo.NewBookRepo(db, logger)
+		// libCardRepo = implMongo.NewLibCardRepo(db, logger)
+		// readerRepo = implMongo.NewReaderRepo(db, client, logger)
+		// reservationRepo = implMongo.NewReservationRepo(db, logger)
+		// ratingRepo = implMongo.NewRatingRepo(db, logger)
 
-		trm, err = manager.New(trmmongo.NewDefaultFactory(mongoClient))
-		if err != nil {
-			logger.Errorf("error initializing manager: %v", err)
-			return
-		}
+		// trm, err = manager.New(trmmongo.NewDefaultFactory(mongoClient))
+		// if err != nil {
+		// 	logger.Errorf("error initializing manager: %v", err)
+		// 	return
+		// }
+		return
 	}
 
 	tokenManager, err := auth.NewTokenManager(cfg.Auth.JWT.SigningKey)
