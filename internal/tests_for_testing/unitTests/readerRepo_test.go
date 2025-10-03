@@ -19,7 +19,7 @@ import (
 	"github.com/jmoiron/sqlx"
 	"github.com/ozontech/allure-go/pkg/framework/provider"
 	"github.com/ozontech/allure-go/pkg/framework/suite"
-	"github.com/redis/go-redis/v9"
+	redis "github.com/redis/go-redis/v9"
 	sqlxmock "github.com/zhashkevych/go-sqlxmock"
 )
 

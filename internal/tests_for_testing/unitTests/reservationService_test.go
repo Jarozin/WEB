@@ -25,7 +25,7 @@ import (
 	"github.com/jmoiron/sqlx"
 	"github.com/ozontech/allure-go/pkg/framework/provider"
 	"github.com/ozontech/allure-go/pkg/framework/suite"
-	"github.com/redis/go-redis/v9"
+	redis "github.com/redis/go-redis/v9"
 	"github.com/testcontainers/testcontainers-go/modules/postgres"
 	testredis "github.com/testcontainers/testcontainers-go/modules/redis"
 )
