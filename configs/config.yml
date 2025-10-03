@@ -1,0 +1,6 @@
+auth:
+  accessTokenTTL: 2h
+  refreshTokenTTL: 5h
+
+db:
+  type: mongo # postgres | mongo
