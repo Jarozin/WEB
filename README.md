@@ -153,3 +153,20 @@ __Администратор__:
 ### UML диаграмма классов:
 
 ![uml](docs/diagrams/uml_new.drawio.png)
+
+
+# ППО. Лабораторная №1
+
+## Экраны будущего web-приложения на уровне черновых эскизов
+
+![alt text](img/book_catalog.png)
+![alt text](img/book_info.png)
+![alt text](img/lib_card_info.png)
+![alt text](img/main.png)
+![alt text](img/profile.png)
+![alt text](img/reservation_list.png)
+![alt text](img/reservation.png)
+![alt text](img/review_list.png)
+![alt text](img/review.png)
+![alt text](img/sign_in.png)
+![alt text](img/sign_up.png)
