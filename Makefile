@@ -25,8 +25,16 @@ gen-mocks:
 
 .PHONY: test
 test:
-	go test -v -shuffle=on ./internal/tests/...
+	go test -v -shuffle on ./internal/tests/...
 
 .PHONY: coverage
 coverage:
 	go tool cover -html ./coverage/cover.out
+
+.PHONY: unitTests
+unitTests:
+	go test -v -shuffle on ./internal/tests_for_testing/unitTests/
+
+.PHONY: serveAllure
+serveAllure:
+	allure serve ./internal/tests_for_testing/unitTests/allure-results

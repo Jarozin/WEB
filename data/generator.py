@@ -99,7 +99,7 @@ class Generator:
 
 def main():
     generator = Generator()
-    generator.generate_books('datasets/books.csv')
+    generator.generate_books('./datasets/books.csv')
 
 
 if __name__ == '__main__':
