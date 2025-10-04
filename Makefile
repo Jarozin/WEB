@@ -33,7 +33,7 @@ coverage:
 
 .PHONY: unitTests
 unitTests:
-	go test -v -shuffle on ./internal/tests_for_testing/unitTests/
+	go test -v -shuffle on -p 10 ./internal/tests_for_testing/unitTests/
 
 .PHONY: serveAllure
 serveAllure:
