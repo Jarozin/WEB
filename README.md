@@ -141,7 +141,7 @@ __Администратор__:
 ### Технологический стек: 
 
 - Backend: Go
-- Frontend: HTML + CSS + JS
+- Frontend: HTML + CSS + JS(REACT)
 - Database: PostgreSQL
 
 ## 2. Верхнеуровневое разбиение на компоненты
