@@ -288,7 +288,7 @@ func getGenericPostgresConnectionString(ctx context.Context, container *testpost
 }
 
 func getGenericPostgresMigrationPath() (string, error) {
-	relativePath := "../../../components/component-repo-postgres/impl/migrations"
+	relativePath := "../../repo/impl/migrations"
 	absolutePath, err := filepath.Abs(relativePath)
 
 	if err != nil {

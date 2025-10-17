@@ -9,7 +9,6 @@ import (
 	"github.com/ozontech/allure-go/pkg/framework/provider"
 	"github.com/ozontech/allure-go/pkg/framework/suite"
 	"github.com/redis/go-redis/v9"
-	"github.com/sirupsen/logrus"
 	testpostgres "github.com/testcontainers/testcontainers-go/modules/postgres"
 	testredis "github.com/testcontainers/testcontainers-go/modules/redis"
 )
@@ -17,7 +16,6 @@ import (
 type IntegrationTestSuite struct {
 	suite.Suite
 
-	logger           *logrus.Entry
 	postgreContainer *testpostgres.PostgresContainer
 	redisContainer   *testredis.RedisContainer
 	db               *sqlx.DB
